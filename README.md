@@ -24,6 +24,7 @@ O objetivo deste portfólio é reunir informações sobre mim e exibir alguns do
 📬 Contato
 
 📧 E-mail: [yan386067@gmail.com]
+
 💼 LinkedIn: https://www.linkedin.com/in/yan-dias-bomfim
 
 🐙 GitHub: github.com/yandiass621
