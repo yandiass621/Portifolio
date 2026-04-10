@@ -72,7 +72,7 @@ window.addEventListener("scroll", () => {
     navLinks.forEach(link => {
         link.style.color = "white";
         if (link.getAttribute("href").includes(current)) {
-            link.style.color = "lightblue";
+            link.style.color = "white";
         }
     });
 });
