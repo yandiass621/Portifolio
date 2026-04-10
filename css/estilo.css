@@ -57,9 +57,6 @@ footer a p:hover{
 .conteiner {
     padding: 0 50px;
 }
-nav a:hover {
-    color: lightblue;
-}
 ol{
     list-style: none;
 }
