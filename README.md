@@ -2,6 +2,7 @@
 
 Bem-vindo ao meu portfólio! 🚀
 Este projeto foi desenvolvido para apresentar minhas habilidades e trabalhos como desenvolvedor front-end, com foco em **HTML** e **CSS**.
+
 ---
 
 ## 🧠 Sobre o Projeto
