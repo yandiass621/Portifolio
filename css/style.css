@@ -18,6 +18,9 @@ nav ul{
     gap: 20px;
 
 }
+#nome{
+    margin: 12px 0 0 0;
+}
 nav a{
     font-size: 18px;
     text-decoration: none;
