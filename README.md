@@ -2,10 +2,6 @@
 
 Bem-vindo ao meu portfólio! 🚀
 Este projeto foi desenvolvido para apresentar minhas habilidades e trabalhos como desenvolvedor front-end, com foco em **HTML** e **CSS**.
-
-🌐 **Acesse o portfólio online:**
-👉 
-
 ---
 
 ## 🧠 Sobre o Projeto
@@ -28,7 +24,7 @@ O objetivo deste portfólio é reunir informações sobre mim e exibir alguns do
 ## 📬 Contato
 
 📧 **E-mail:** [yan386067@gmail.com](mailto:yan386067@gmail.com)
-💼 **LinkedIn:** [https://www.linkedin.com/in/yan-dias-bomfim](https://www.linkedin.com/in/yan-dias-bomfim)
+💼 **LinkedIn:** [https://www.linkedin.com/in/yandiass]
 🐙 **GitHub:** [https://github.com/yandiass621](https://github.com/yandiass621)
 
 ---
