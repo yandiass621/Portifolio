@@ -1,8 +1,3 @@
-Perfeito 👍
-Segue o texto **já com o link do site hospedado no GitHub Pages** incluído de forma profissional:
-
----
-
 # 💼 Portfólio – Yan Dias
 
 Bem-vindo ao meu portfólio! 🚀
