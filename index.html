@@ -1,65 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/desenvolvedor.png" type="image/x-icon">
 
-    <title>Yan Dias</title>
+    <link
+        rel="shortcut icon"
+        href="imagens/desenvolvedor.png"
+        type="image/x-icon"
+    >
+
+    <title>Yan Dias | Desenvolvedor de Software</title>
 
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="script/github-projects.js" defer></script>
+    <script src="script/script.js" defer></script>
 </head>
 
 <body>
     <div class="conteiner">
-        <nav>
-        <a href="index.html" id="nome">Yan Dias Bomfim</a>
-        <ul>
-            <li>
-                <a href="#sobre-mim">Sobre mim</a>
-            </li>
-            <li>
-                <a href="#project">Projetos</a>
-            </li>
-            <li>
-                <a href="#contact">Contato</a>
-            </li>
-        </ul>
-    </nav>
 
-    <header>
-        <div class="center">
-            <img src="imagens/perfil.jpeg" alt="">
-        </div>
-        <h1>Yan Dias</h1>
-        <h2>Desenvolvedor de Software</h2>
-    </header>
+        <nav aria-label="Navegação principal">
+            <a href="index.html" id="nome">Yan Dias Bomfim</a>
 
-    <main>
-        <section class="sobre-mim" id="sobre-mim">
-            <h1>Sobre Mim</h1>
-            <p>
-                Sou estudante de Tecnologia da Informação e desenvolvedor em formação, com foco no desenvolvimento web e interesse constante em aprender e evoluir na área de tecnologia.
+            <ul>
+                <li><a href="#sobre-mim">Sobre mim</a></li>
+                <li><a href="#project">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
 
-                Tenho experiência prática na criação de sites e projetos utilizando principalmente HTML, CSS e JavaScript, buscando desenvolver interfaces responsivas, organizadas e com uma boa experiência para o usuário. Também possuo conhecimentos em Python e venho ampliando meus estudos em outras tecnologias do desenvolvimento web.
+        <header>
+            <div class="center">
+                <img
+                    src="imagens/perfil.jpeg"
+                    alt="Foto de perfil de Yan Dias"
+                >
+            </div>
 
-                Gosto de transformar ideias em projetos funcionais e utilizo cada projeto como uma oportunidade para colocar meus conhecimentos em prática, aprender novas ferramentas e aprimorar minhas habilidades como desenvolvedor.
+            <h1>Yan Dias</h1>
+            <h2>Estudande De Análise e Desenvolvimento de Sistemas</h2>
+        </header>
 
-                Atualmente, busco oportunidades na área de tecnologia que me permitam aplicar meus conhecimentos, adquirir experiência profissional e continuar evoluindo como desenvolvedor.
-            </p>
-        </section>
+        <main>
+            <section class="sobre-mim" id="sobre-mim">
+                <h1>Sobre mim</h1>
 
-        <section class="formacao">
-            <h1>Formação</h1>
+                <p>
+                    Sou estudante de Tecnologia da Informação e
+                    desenvolvedor em formação, com foco no desenvolvimento
+                    web e interesse constante em aprender e evoluir na
+                    área de tecnologia.
+
+                    Tenho experiência prática na criação de sites e
+                    projetos utilizando principalmente HTML, CSS e
+                    JavaScript, buscando desenvolver interfaces
+                    responsivas, organizadas e com uma boa experiência
+                    para o usuário. Também possuo conhecimentos em Python
+                    e venho ampliando meus estudos em outras tecnologias
+                    do desenvolvimento web.
+
+                    Gosto de transformar ideias em projetos funcionais
+                    e utilizo cada projeto como uma oportunidade para
+                    colocar meus conhecimentos em prática, aprender
+                    novas ferramentas e aprimorar minhas habilidades
+                    como desenvolvedor.
+
+                    Atualmente, busco oportunidades na área de tecnologia
+                    que me permitam aplicar meus conhecimentos, adquirir
+                    experiência profissional e continuar evoluindo como
+                    desenvolvedor.
+                </p>
+            </section>
+
+            <section class="formacao" id="formacao">
+                <h1>Formação</h1>
+
                 <ol>
                     <li>Ensino Médio: Completo</li>
-                    <li>Análise e Desenvolvimento de Sistemas: Em Andamento</li>
-                    
+                    <li>Análise e Desenvolvimento de Sistemas: Em andamento</li>
                 </ol>
-        </section>
+            </section>
 
-         <section class="cursos">
-            <h1>Cursos</h1>
+            <section class="cursos" id="cursos">
+                <h1>Cursos e conhecimentos</h1>
+
                 <ul>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -67,63 +93,89 @@
                     <li>Python</li>
                     <li>JavaScript</li>
                 </ul>
-        </section>
+            </section>
 
-        <section class="projetos" id="project">
-            <h1>Projetos</h1>
+            <section id="project" aria-labelledby="projects-title">
+                <h1 id="projects-title">Meus projetos</h1>
 
-            <div class="projeto">
-                <div class="card">
-                    <img src="imagens/tech-solut.png" alt="Imagem">
-        
-                    <a href="https://yandiass621.github.io/Tech-Solut/"><h3>Tech Solut</h3>
-                    <p>Desenvolvimento de site institucional para empresa de tecnologia, utilizando HTML, CSS e JavaScript. Projeto com foco em apresentação de serviços, responsividade, organização visual e experiência do usuário.</p></a>
-                </div>
+                <p class="projects-description">
+                    Alguns dos meus projetos e estudos em desenvolvimento.
+                </p>
 
-                <div class="card">
-                    <img src="imagens/nossa_história.png" alt="Imagem">
-        
-                    <a href="https://github.com/yandiass621/Nossa-Historia"><h3>Nossa História</h3>
-                    <p>Desenvolvimento de site institucional com foco na apresentação da trajetória e identidade da empresa. Aplicação de HTML e CSS para estruturar e organizar o conteúdo, criando uma interface visual, responsiva e de fácil navegação.
-                    </p></a>
+                <div
+                    id="projects-container"
+                    class="projects-container"
+                    aria-live="polite"
+                    aria-busy="true"
+                >
+                    <p class="projects-status">
+                        Carregando projetos do GitHub...
+                    </p>
                 </div>
-                <div class="card">
-                    <img src="imagens/site-piscologa.png" alt="Imagem">
-        
-                    <a href="https://github.com/yandiass621/Site-Psicologa"><h3>Portifólio para cliente</h3>
-                    <p>Desenvolvimento de site institucional para profissional da área de psicologia, com foco na apresentação dos serviços, informações profissionais e canais de contato. Projeto desenvolvido com foco em responsividade, organização de conteúdo e experiência do usuário.
-                    </p></a>
-                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="contato" id="contact">
+                <h1>Redes sociais para contato</h1>
             </div>
-        </section>
-    </main>
-     <footer>
-        <div class="contato" id="contact">
-            <h1>Redes Sociais para Contato</h1>
-        </div>
 
-        <div class="links">
-            <a href="https://github.com/yandiass621" target="_blank">
-                <img src="imagens/github (1)-100.png" alt="github" rel="noopener noreferrer">
-                <p>yandiass621</p>
-            </a>
+            <div class="links">
+                <a
+                    href="https://github.com/yandiass621"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="imagens/github (1)-100.png"
+                        alt=""
+                    >
+                    <p>GitHub</p>
+                </a>
 
-            <a href="https://www.instagram.com/yan.diass/" target="_blank">
-                <img src="imagens/instagram-100.png" alt="instagram" rel="noopener noreferrer">
-                <p>yan.diass</p>
-            </a>
+                <a
+                    href="https://www.instagram.com/yan.diass/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="imagens/instagram-100.png"
+                        alt=""
+                    >
+                    <p>Instagram</p>
+                </a>
 
-            <a href="https://api.whatsapp.com/send?phone=5511945909509" target="_blank">
-                <img src="imagens/whatsapp-atual.png" alt="whatsapp">
-                <p>yan.diass</p>
-            </a>
+                <a
+                    href="https://api.whatsapp.com/send?phone=5511945909509"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="imagens/whatsapp-atual.png"
+                        alt=""
+                    >
+                    <p>WhatsApp</p>
+                </a>
 
-            <a href="https://www.linkedin.com/in/yan-dias-bomfim-a44153233/" target="_blank">
-                <img src="imagens/linkedin-azulwebp.webp" alt="perfil">
-                <p>yan.diass</p>
-            </a>
-        </div>
-    </footer>
-    <script src="script/script.js"></script>
+                <a
+                    href="https://www.linkedin.com/in/yan-dias-bomfim-a44153233/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="imagens/linkedin-azulwebp.webp"
+                        alt=""
+                    >
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+
+            <p class="footer-copy">
+                © <span id="current-year"></span> Yan Dias.
+                Todos os direitos reservados.
+            </p>
+        </footer>
+
+    </div>
 </body>
 </html>

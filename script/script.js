@@ -1,109 +1,157 @@
-// ================================
+// ========================================
 // EFEITO DE DIGITAÇÃO NO SUBTÍTULO
-// ================================
-const subtitle = document.querySelector("h2");
-const text = subtitle.innerText;
-subtitle.innerText = "";
+// ========================================
 
-let index = 0;
+const subtitle = document.querySelector("header h2");
 
-function typeEffect() {
-    if (index < text.length) {
-        subtitle.innerText += text.charAt(index);
-        index++;
-        setTimeout(typeEffect, 60);
+if (subtitle) {
+    const originalText = subtitle.textContent;
+    let index = 0;
+
+    subtitle.textContent = "";
+
+    function typeEffect() {
+        if (index < originalText.length) {
+            subtitle.textContent += originalText.charAt(index);
+            index++;
+
+            setTimeout(typeEffect, 60);
+        }
     }
+
+    typeEffect();
 }
 
-window.addEventListener("load", typeEffect);
 
+// ========================================
+// SCROLL SUAVE DA NAVEGAÇÃO
+// ========================================
 
-// ================================
-// SCROLL SUAVE PERSONALIZADO
-// ================================
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+const navLinks = document.querySelectorAll(
+    'nav a[href^="#"]'
+);
+
+navLinks.forEach(link => {
+    link.addEventListener("click", event => {
+        const href = link.getAttribute("href");
+        const target = document.querySelector(href);
+
+        // Evita erros caso o destino não exista.
+        if (!target) {
+            return;
+        }
+
+        event.preventDefault();
+
         target.scrollIntoView({
-            behavior: 'smooth'
+            behavior: "smooth",
+            block: "start"
         });
     });
 });
 
 
-// ================================
-// ANIMAÇÃO FADE-IN AO ROLAR
-// ================================
-const sections = document.querySelectorAll("section, .projeto, footer");
+// ========================================
+// ANIMAÇÃO FADE-IN AO ROLAR A PÁGINA
+// ========================================
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = "translateY(0)";
+const animatedElements = document.querySelectorAll(
+    "main section, footer"
+);
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.05
         }
+    );
+
+    animatedElements.forEach(element => {
+        element.classList.add("fade-in");
+        observer.observe(element);
     });
-}, { threshold: 0.2 });
 
-sections.forEach(section => {
-    section.style.opacity = 0;
-    section.style.transform = "translateY(40px)";
-    section.style.transition = "all 0.8s ease";
-    observer.observe(section);
-});
+} else {
+    // Compatibilidade com navegadores sem IntersectionObserver.
+    animatedElements.forEach(element => {
+        element.classList.add("is-visible");
+    });
+}
 
 
-// ================================
+// ========================================
 // DESTAQUE DO MENU ATIVO
-// ================================
-const navLinks = document.querySelectorAll("nav a");
+// ========================================
 
-window.addEventListener("scroll", () => {
-    let current = "";
+const navigationTargets = [
+    ...document.querySelectorAll("main section[id]"),
+    document.querySelector("#contact")
+].filter(Boolean);
 
-    document.querySelectorAll("section").forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute("id");
+function updateActiveNavigation() {
+    let currentSection = "";
+
+    navigationTargets.forEach(section => {
+        const sectionTop =
+            section.getBoundingClientRect().top +
+            window.scrollY;
+
+        if (window.scrollY >= sectionTop - 220) {
+            currentSection = section.id;
         }
     });
 
     navLinks.forEach(link => {
-        link.style.color = "white";
-        if (link.getAttribute("href").includes(current)) {
-            link.style.color = "white";
-        }
+        const isActive =
+            link.getAttribute("href") === `#${currentSection}`;
+
+        link.classList.toggle("active", isActive);
     });
-});
+}
+
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+);
+
+updateActiveNavigation();
 
 
-// ================================
+// ========================================
 // BOTÃO VOLTAR AO TOPO
-// ================================
+// ========================================
+
 const backToTop = document.createElement("button");
-backToTop.innerText = "↑";
-backToTop.style.position = "fixed";
-backToTop.style.bottom = "30px";
-backToTop.style.right = "30px";
-backToTop.style.padding = "10px 15px";
-backToTop.style.border = "none";
-backToTop.style.borderRadius = "50%";
-backToTop.style.backgroundColor = "white";
-backToTop.style.cursor = "pointer";
-backToTop.style.display = "none";
-backToTop.style.fontSize = "18px";
-backToTop.style.fontWeight = "bold";
+
+backToTop.type = "button";
+backToTop.className = "back-to-top";
+backToTop.textContent = "↑";
+backToTop.setAttribute("aria-label", "Voltar ao topo");
 
 document.body.appendChild(backToTop);
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backToTop.style.display = "block";
-    } else {
-        backToTop.style.display = "none";
-    }
-});
+function updateBackToTop() {
+    backToTop.classList.toggle(
+        "visible",
+        window.scrollY > 300
+    );
+}
+
+window.addEventListener(
+    "scroll",
+    updateBackToTop,
+    { passive: true }
+);
 
 backToTop.addEventListener("click", () => {
     window.scrollTo({
@@ -112,19 +160,15 @@ backToTop.addEventListener("click", () => {
     });
 });
 
+updateBackToTop();
 
-// ================================
-// EFEITO HOVER MAIS SUAVE NOS CARDS
-// ================================
-const cards = document.querySelectorAll(".card");
 
-cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-        card.style.transform = "scale(1.05)";
-        card.style.transition = "0.3s ease";
-    });
+// ========================================
+// ANO AUTOMÁTICO NO RODAPÉ
+// ========================================
 
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "scale(1)";
-    });
-});
+const currentYear = document.querySelector("#current-year");
+
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}

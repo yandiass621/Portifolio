@@ -1,219 +1,487 @@
-body {
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    text-align: justify;
-    
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    box-sizing: border-box;
 }
-nav{
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    margin: 0;
+    color: #ffffff;
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.conteiner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ================================
+   NAVEGAÇÃO
+================================ */
+
+nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
 }
-nav ul{
+
+#nome {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
     list-style: none;
     margin: 0;
-    padding: 1em;
-    gap: 20px;
+    padding: 1em 0;
+}
 
-}
-#nome{
-    margin: 12px 0 0 0;
-}
-nav a{
+nav a {
+    color: #ffffff;
     font-size: 18px;
     text-decoration: none;
-    color: white;
-    transition: transform 0.2s ease;
+    transition: color 0.2s ease;
 }
-nav a:hover{
-    color:lightblue;
+
+nav a:hover,
+nav a.active {
+    color: lightblue;
 }
-h1 {
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-}
-h2 {
-    color: rgb(255, 255, 255);
-    font-size: 20px;
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+header {
+    padding: 20px 0;
 }
 
 header img {
+    display: block;
     width: 150px;
     height: 150px;
+    object-fit: cover;
     border-radius: 50%;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid #ffffff;
 }
+
 .center {
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
-section{
-    padding: 20px 40px;
+
+header h1,
+header h2 {
+    color: #ffffff;
+    text-align: center;
 }
-.sobre-mim p{
-    padding: 20px 50px;
+
+header h1 {
+    font-size: 28px;
+}
+
+header h2 {
+    min-height: 1.5em;
     font-size: 20px;
 }
-.formacao ol{
-    padding: 20px 50px;
+
+/* ================================
+   SEÇÕES
+================================ */
+
+section {
+    padding: 30px 20px;
+    scroll-margin-top: 20px;
+}
+
+section h1,
+.contato h1 {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* ================================
+   SOBRE MIM
+================================ */
+
+.sobre-mim p {
+    padding: 10px 30px;
+    font-size: 18px;
+    line-height: 1.8;
+    
+}
+
+/* ================================
+   FORMAÇÃO
+================================ */
+
+.formacao ol {
+    padding: 10px 30px;
     list-style: disc;
 }
-.formacao li{
-    font-size: 20px;
-}
-.cursos ul{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding: 20px 0;
-}
-.cursos li{
-    font-size: 20px;
-}
-.projeto {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 20px 0;
-}
-.projeto a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
-.card {
-    background-color: black;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgb(100, 99, 99);
-    width: 200px;
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.2s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-}
-.card img {
-    width: 100%;
-    height: 150px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-}
-.card h3 {
-    margin: 8px 0;
+
+.formacao li {
+    margin-bottom: 10px;
     font-size: 18px;
 }
-.card p {
-    color: white;
+
+/* ================================
+   CURSOS
+================================ */
+
+.cursos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.cursos li {
+    font-size: 18px;
+}
+
+/* ================================
+   PROJETOS DINÂMICOS
+================================ */
+
+.projects-description {
+    color: #c7c7c7;
+    margin-bottom: 25px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(50%, 272px), 1fr)
+    );
+    gap: 25px;
+    padding: 20px 0;
+    align-items: stretch;
+}
+
+.projects-status {
+    grid-column: 1 / -1;
+    color: #c7c7c7;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+
+    background-color: #0b0b0b;
+    color: #ffffff;
+
+    border: 1px solid #292929;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgb(100 99 99 / 25%);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #6f9fde;
+    box-shadow: 0 10px 25px rgb(100 99 99 / 30%);
+}
+
+.project-card h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.project-card p {
+    margin: 0 0 16px;
+    color: #d0d0d0;
     font-size: 15px;
+    overflow-wrap: anywhere;
 }
-.contato{
-    padding: 20px 40px;
+
+.project-card .project-language {
+    align-self: flex-start;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+
+    color: #b8d8ff;
+    background-color: #14263b;
+
+    border: 1px solid #294566;
+    border-radius: 20px;
+
+    font-size: 12px;
 }
-.links{
+
+.project-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 0 0 18px;
+}
+
+.project-topic {
+    padding: 4px 8px;
+    border-radius: 5px;
+    background-color: #1b1b1b;
+    color: #cccccc;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
+    margin-bottom: 18px;
+
+    color: #a8a8a8;
+    font-size: 13px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.project-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 40px;
+    padding: 9px 13px;
+
+    border: 1px solid #6f9fde;
+    border-radius: 8px;
+
+    color: #ffffff;
+    background-color: transparent;
+
+    text-decoration: none;
+    font-size: 13px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.project-links a:hover {
+    color: #000000;
+    background-color: #6f9fde;
+}
+
+.project-links a:focus-visible,
+nav a:focus-visible {
+    outline: 2px solid lightblue;
+    outline-offset: 4px;
+}
+
+/* ================================
+   CONTATO
+================================ */
+
+.contato {
+    padding: 20px 0;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.links {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 0;
 }
+
 .links a {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    color: #ffffff;
     text-decoration: none;
-    color: white;
+
+    transition: color 0.2s ease;
 }
-.links p{
+
+.links a:hover {
+    color: lightblue;
+}
+
+.links p {
+    margin: 8px 0;
     padding: 5px;
 }
+
 .links img {
     width: 30px;
     height: 30px;
+    object-fit: contain;
 }
-.links a p:hover{
-    color:lightblue;
-}
-.conteiner {
-    padding: 0 50px;
-}
-@media (max-width: 1024px) {
 
+.footer-copy {
+    padding: 15px 0;
+    color: #999999;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ================================
+   BOTÃO VOLTAR AO TOPO
+================================ */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1000;
+
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid #333333;
+    border-radius: 50%;
+
+    color: #000000;
+    background-color: #ffffff;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: lightblue;
+}
+
+/* ================================
+   TABLETS
+================================ */
+
+@media (max-width: 1024px) {
     .conteiner {
         padding: 0 30px;
     }
 
-    nav {
-        padding: 0 10px;
-    }
-
     nav ul {
         gap: 15px;
     }
 
+    nav a {
+        font-size: 16px;
+    }
+
     section {
-        padding: 20px 30px;
+        padding: 25px 15px;
     }
 
     .sobre-mim p {
-        padding: 20px 20px;
-        font-size: 18px;
+        padding: 10px 15px;
+        font-size: 17px;
     }
 
     .formacao ol {
-        padding: 20px 30px;
+        padding: 10px 25px;
     }
 
-    .formacao li {
-        font-size: 18px;
+    .formacao li,
+    .cursos li {
+        font-size: 17px;
     }
 
-    .cursos ul {
-        flex-wrap: wrap;
-        justify-content: space-around;
+    .projects-container {
         gap: 20px;
     }
-
-    .cursos li {
-        font-size: 18px;
-    }
-
-    .projeto {
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .card {
-        width: 200px;
-    }
-
-    .contato {
-        padding: 20px 30px;
-    }
-
-    .links {
-        justify-content: space-around;
-    }
 }
-@media (max-width: 768px) {
 
+/* ================================
+   CELULARES
+================================ */
+
+@media (max-width: 768px) {
     .conteiner {
         padding: 0 15px;
     }
 
-    /* MENU */
-
     nav {
         flex-direction: column;
         align-items: center;
+        gap: 5px;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+        padding: 10px 0;
     }
 
-    /* CABEÇALHO */
+    nav a {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 15px 0;
+    }
 
     header img {
         width: 120px;
@@ -221,30 +489,27 @@ section{
     }
 
     header h1 {
-        text-align: center;
-        font-size: 20px;
+        font-size: 24px;
     }
 
     header h2 {
-        text-align: center;
         font-size: 17px;
     }
 
-    /* SEÇÕES */
-
     section {
-        padding: 20px 10px;
+        padding: 20px 5px;
     }
 
-    /* SOBRE MIM */
+    section h1,
+    .contato h1 {
+        font-size: 22px;
+    }
 
     .sobre-mim p {
         padding: 10px 0;
         font-size: 16px;
-        line-height: 1.6;
+        line-height: 1.7;
     }
-
-    /* FORMAÇÃO */
 
     .formacao ol {
         padding: 10px 20px;
@@ -252,46 +517,90 @@ section{
 
     .formacao li {
         font-size: 16px;
-        margin-bottom: 10px;
     }
 
-    /* CURSOS */
-
     .cursos ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 0;
+        justify-content: flex-start;
+        gap: 12px 30px;
+        padding: 15px 20px;
     }
 
     .cursos li {
-        font-size: 17px;
+        font-size: 16px;
     }
 
-    /* PROJETOS */
-
-    .projeto {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
+    .projects-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
     }
 
-    .card {
-        width: 100%;
-        max-width: 300px;
-        box-sizing: border-box;
+    .project-card {
+        padding: 18px;
     }
 
-    /* CONTATO */
-
-    .contato {
-        padding: 20px 10px;
-        text-align: center;
+    .project-links a {
+        flex: 1 1 auto;
     }
 
     .links {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
     }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* ================================
+   ACESSIBILIDADE
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Animação de entrada das seções */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botão para tentar carregar os projetos novamente */
+
+.retry-button {
+    justify-self: center;
+    padding: 10px 18px;
+
+    color: #ffffff;
+    background-color: #151515;
+
+    border: 1px solid #6f9fde;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.retry-button:hover {
+    background-color: #1c3550;
 }
